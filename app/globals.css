@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+
+:root{--bg:#f8fafc}
+html,body,#__next{height:100%}
+body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;margin:0;background:var(--bg)}
+
+.container{max-width:1200px;margin:0 auto;padding:0 16px}
+
+.board{display:flex;gap:16px;overflow:auto;padding-bottom:24px}
+.column{background:#fff;border-radius:8px;padding:12px;min-width:280px;max-height:80vh;display:flex;flex-direction:column}
+.column-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.task-list{display:flex;flex-direction:column;gap:8px;overflow:auto}
+.task-card{background:#f3f4f6;padding:10px;border-radius:8px;box-shadow:0 1px 2px rgba(0,0,0,0.04)}
+
+.btn{padding:8px 10px;border-radius:6px;cursor:pointer;border:0}
+.btn-primary{background:#0ea5a4;color:white}
+.btn-ghost{background:transparent}
+
+.modal{position:fixed;inset:0;background:rgba(0,0,0,0.4);display:flex;align-items:center;justify-content:center}
+.modal-inner{background:#fff;padding:20px;border-radius:8px;min-width:320px}
+input,textarea,select{padding:8px;border-radius:6px;border:1px solid #e6e9ee}
