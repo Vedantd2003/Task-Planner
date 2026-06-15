@@ -1,36 +1,36 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Task Planner
 
-## Getting Started
+A Kanban-style task planner built with Next.js.
 
-First, run the development server:
+## What it is
+A Trello-like task board app built in Next.js, with drag-and-drop-style columns (To Do / In Progress / Done), task creation/editing, user assignment, and a Pages API route for board persistence.
 
+## Demo
+[TODO: add live demo link]
+
+## Tech Stack
+- Next.js 15 (App Router + a Pages API route)
+- React 19
+- Zustand (with `persist` middleware) for client-side state
+- `nanoid` for ID generation
+- Tailwind CSS 4
+
+## Features
+- Kanban board with three columns: To Do, In Progress, Done (`Board.jsx`, `Column.jsx`)
+- Create/edit tasks via modal, with title, description, assignee, due date, and priority (`NewtaskModal.jsx`, `TaskCard.jsx`)
+- Toggle task completion and delete tasks
+- Add/remove users and assign tasks to them (`AssignUserSelect.jsx`)
+- Local persistence via Zustand's `persist` middleware (localStorage)
+- Mock API routes for board and user data (`app/pages/api/board.js`, `app/pages/api/users.js`) used as a fetch/save layer
+
+## Local Setup
 ```bash
+git clone https://github.com/Vedantd2003/Task-Planner.git
+cd Task-Planner
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
+Open http://localhost:3000.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## What I Learned
+Combining Zustand's persisted store for the source of truth with simple API routes for board state gave a clean separation between client-side UI state and a (mock) server sync layer — useful groundwork for swapping in a real backend later.
